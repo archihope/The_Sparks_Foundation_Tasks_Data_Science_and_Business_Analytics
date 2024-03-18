@@ -11,9 +11,20 @@ url = "http://bit.ly/w-data"
 data = pd.read_csv(url)
 print("----Data uploaded Successfully----")
 
+# ----Data uploaded Successfully----#
+
 print(data.head())
 
+#   Hours  Scores
+#0    2.5      21
+#1    5.1      47
+#2    3.2      27
+#3    8.5      75
+#4    3.5      30
+
 print(data.isnull == True)
+
+# False
 
 sns.set_style('darkgrid')
 sns.scatterplot(y= data['Scores'], x= data['Hours'])
@@ -22,12 +33,17 @@ plt.ylabel('Marks Percentage', size=12)
 plt.xlabel('Hours Studied', size=12)
 plt.show()
 
+# Image Marks Vs Study Hours
+
 sns.regplot(x= data['Hours'], y= data['Scores'])
 plt.title('Regression Plot',size=20)
 plt.ylabel('Marks Percentage', size=12)
 plt.xlabel('Hours Studied', size=12)
 plt.show()
 print(data.corr())
+
+# Image Regression Plot
+
 
 X = data.iloc[:, :-1].values
 y = data.iloc[:, 1].values
